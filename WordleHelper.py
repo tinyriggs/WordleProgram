@@ -19,3 +19,11 @@ sorted_answer = sorted(answer.items(), key=lambda x: x[1], reverse = True)
 
 for i in sorted_answer:
     print(i[0], i[1])
+
+
+for word in words:
+    for letter in word:
+        if letter != "s":
+            break
+        else:
+            print(word)
