@@ -14,5 +14,8 @@ for word in words:
         else:
             answer[letter] = 1
 
+sorted_answer = sorted(answer.items(), key=lambda x: x[1], reverse = True)
 
-print(answer)
+
+for i in sorted_answer:
+    print(i[0], i[1])
