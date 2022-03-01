@@ -1,7 +1,11 @@
 
 words = []
 answer = {}
-acab = []
+first_letters = []
+second_letters = []
+third_letters = []
+fourth_letters = []
+fifth_letters = []
 letters = ["s", "e", "a", "o", "r"]
 
 
@@ -28,10 +32,33 @@ def letter_check(word, letter, element):
     else:
         return False
 
+
+
 for word in words:
     word = word.rstrip()
-    fuck = letter_check(word,"s",0)
+    for letter in letters:
+        if letter_check(word, letter, 0):
+            first_letters.append(word)
 
+for word in first_letters:
+    for letter in letters:
+        if letter_check(word, letter, 1):
+            second_letters.append(word)
 
+for word in second_letters:
+    for letter in letters:
+        if letter_check(word, letter, 2):
+            third_letters.append(word)
 
-print(acab)
+for word in third_letters:
+    for letter in letters:
+        if letter_check(word, letter, 3):
+            fourth_letters.append(word)
+
+for word in fourth_letters:
+    for letter in letters:
+        if letter_check(word, letter, 4):
+            fifth_letters.append(word)
+
+for word in fifth_letters:
+    print(word)
