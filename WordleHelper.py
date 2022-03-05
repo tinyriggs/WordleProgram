@@ -60,5 +60,16 @@ for word in fourth_letters:
         if letter_check(word, letter, 4):
             fifth_letters.append(word)
 
+#for word in fifth_letters:
+    #print(word)
+
+
+counter = 0
+
 for word in fifth_letters:
-    print(word)
+    while counter < 5:
+        if word[counter] == word[counter + 1]:
+            break
+        elif word[counter] == word[counter + 2]:
+        counter += 1
+    counter = 0
