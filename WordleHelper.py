@@ -60,16 +60,20 @@ for word in fourth_letters:
         if letter_check(word, letter, 4):
             fifth_letters.append(word)
 
-#for word in fifth_letters:
-    #print(word)
+# for word in fifth_letters:
+#     print(word)
 
 
-counter = 0
+def are_letters_matching(word):
+    counter = 4
+    for num in range(5):
+        for x in range(counter):
+            if word[num] == word[num + (x+1)]:
+                return False
+        if counter == 0:
+            return True
+        counter -= 1
 
 for word in fifth_letters:
-    while counter < 5:
-        if word[counter] == word[counter + 1]:
-            break
-        elif word[counter] == word[counter + 2]:
-        counter += 1
-    counter = 0
+    if are_letters_matching(word):
+        print(word)
