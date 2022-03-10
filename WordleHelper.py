@@ -6,10 +6,10 @@ second_letters = []
 third_letters = []
 fourth_letters = []
 fifth_letters = []
-letters = ["s", "e", "a", "o", "r"]
+letters = []
 
 
-with open("C:/Users/nr107/Desktop/WordleProgram/words.txt.txt") as f:
+with open("C:/Users/nr107/Desktop/WordleProgram/words.txt") as f:
     words = f.readlines()
 
 for word in words:
@@ -20,18 +20,20 @@ for word in words:
         else:
             answer[letter] = 1
 
-sorted_answer = sorted(answer.items(), key=lambda x: x[1], reverse = True)
+sorted_answer = dict(sorted(answer.items(), key=lambda x: x[1], reverse = True))
 
+counter = 0
+for key in sorted_answer.keys():
+    if counter < 5:
+        letters.append(key)
+        counter += 1
 
-# for i in sorted_answer:
-#     print(i[0], i[1])
 
 def letter_check(word, letter, element):
     if word[element] == letter:
         return True
     else:
         return False
-
 
 
 for word in words:
@@ -59,9 +61,6 @@ for word in fourth_letters:
     for letter in letters:
         if letter_check(word, letter, 4):
             fifth_letters.append(word)
-
-# for word in fifth_letters:
-#     print(word)
 
 
 def are_letters_matching(word):
