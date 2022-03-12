@@ -1,13 +1,17 @@
 import string
-
+import os
 
 words = []
 stripped_words = []
 letter_quantities = {}
 top_5_letters = []
 
+script_path = os.path.dirname(os.path.abspath(__file__))
+rel_path = "words.txt"
+abs_file_path = os.path.join(script_path, rel_path)
 
-with open("C:/Users/nr107/Desktop/WordleProgram/words.txt") as f:
+
+with open(abs_file_path) as f:
     words = f.readlines()
 
 for word in words:
